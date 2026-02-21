@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LeLave Cleaning Brand</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="theme-color" content="#1f2937">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+
+<style>
+
+body{
+  font-family:system-ui,Segoe UI,Arial;
+  background:#f4f6f9;
+}
+
+.navbar{
+  background:#0f172a;
+}
+.navbar-brand{font-weight:700;color:white!important}
+
+.hero{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  color:white;
+  background:linear-gradient(120deg,#0ea5e9,#6366f1);
+}
+
+.section{
+  padding:70px 0;
+}
+
+/* product card */
+
+.product{
+  border-radius:22px;
+  overflow:hidden;
+  transition:.4s;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.product:hover{
+  transform:translateY(-8px) scale(1.02);
+}
+
+.p-body{
+  padding:18px;
+  background:rgba(255,255,255,.92);
+}
+
+/* color backgrounds */
+
+.bg-phenyl{background:linear-gradient(135deg,#e0f2fe,#bae6fd);}
+.bg-soap{background:linear-gradient(135deg,#dcfce7,#86efac);}
+.bg-dish{background:linear-gradient(135deg,#fef08a,#fde047);}
+.bg-floor{background:linear-gradient(135deg,#bbf7d0,#4ade80);}
+.bg-detergent{background:linear-gradient(135deg,#bfdbfe,#60a5fa);}
+.bg-toilet{background:linear-gradient(135deg,#c7d2fe,#818cf8);}
+.bg-handwash{background:linear-gradient(135deg,#fed7aa,#fb923c);}
+.bg-comfort{background:linear-gradient(135deg,#e0e7ff,#93c5fd);}
+
+/* image fit – no pixel break */
+
+.product img{
+  width:100%;
+  height:320px;
+  object-fit:contain;
+  background:white;
+  padding:10px;
+}
+
+/* whatsapp button */
+
+.order-btn{
+  background:#25D366;
+  border:none;
+  color:white;
+  padding:8px 14px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.order-btn:hover{background:#1fae57}
+
+/* floating */
+
+.float-whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  color:white;
+  z-index:999;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+footer{
+  background:#0f172a;
+  color:white;
+  padding:40px 0;
+}
+
+</style>
+</head>
+<body>
+
+<!-- CHANGE YOUR NUMBER HERE -->
+<script>
+const phone="919999999999"; // replace with your WhatsApp number
+function order(name,price){
+  const msg = `Hello LeLave, I would like to order ${name} – Rs.${price}`;
+  window.open(`https://wa.me/${phone}?text=`+encodeURIComponent(msg));
+}
+</script>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">LeLave</a>
+    <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#nav"></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="container text-center">
+    <h1>LeLave Cleaning Brand</h1>
+    <p class="lead mt-3">
+      Powerful cleaning solutions with freshness, care and comfort for every home.
+    </p>
+    <a href="#products" class="btn btn-light mt-3 px-4">View Products</a>
+  </div>
+</section>
+
+<section class="section" id="about">
+<div class="container text-center">
+<h2 class="mb-4">About LeLave</h2>
+<p>
+LeLave is a modern cleaning brand established in <strong>2025</strong>, offering a wide
+range of high-quality cleaning and hygiene products for homes and businesses.
+Our products are designed to deliver powerful cleaning performance, long-lasting
+freshness and safe everyday usage – with multiple fragrance and product options
+to suit every need.
+</p>
+</div>
+</section>
+
+<section class="section" id="products">
+<div class="container">
+<h2 class="text-center mb-5">Our Products</h2>
+
+<div class="row g-4">
+
+<!-- White Phenyl -->
+<div class="col-lg-4 col-md-6">
+<div class="product bg-phenyl">
+<img src="White Phenyl.png">
+<div class="p-body">
+<h5>White Phenyl – 5 Litre</h5>
+<p>Strong disinfectant phenyl for daily floor hygiene and germ protection.</p>
+<b>₹199</b><br>
+<button class="order-btn mt-2" onclick="order('White Phenyl 5L',199)">Order on WhatsApp</button>
+</div>
+</div>
+</div>
+
+<!-- Soap Oil -->
+<div class="col-lg-4 col-md-6">
+<div class="product bg-soap">
+<img src="Soap Oil.png">
+<div class="p-body">
+<h5>Soap Oil – 5 Litre</h5>
+<p>Multi-purpose soap oil for floor and surface cleaning with rich shine.</p>
+<b>₹249</b><br>
+<button class="order-btn mt-2" onclick="order('Soap Oil 5L',249)">Order on WhatsApp</button>
+</div>
+</div>
+</div>
+
+<!-- Dishwash 5L -->
+<div class="col-lg-4 col-md-6">
+<div class="product bg-dish">
+<img src="Dish Wash Gel Lemon.png">
+<div class="p-body">
+<h5>Dishwash Gel Lemon – 5 Litre</h5>
+<p>Powerful grease cutting formula with refreshing lemon fragrance.</p>
+<b>₹300</b><br>
+<button class="order-btn mt-2" onclick="order('Dishwash Gel 5L',300)">Order on WhatsApp</button>
+</div>
+</div>
+</div>
+
+<!-- Floor Cleaner Lemon -->
+<div class="col-lg-4 col-md-6">
+<div class="product bg-floor">
+<img src="Floor Cleaner Lemon.png">
+<div class="p-body">
+<h5>Floor Cleaner Lemon – 5 Litre</h5>
+<p>Removes tough stains and leaves long lasting lemon freshness.</p>
+<b>₹399</b><br>
+<button class="order-btn mt-2" onclick="order('Floor Cleaner Lemon 5L',399)">Order on WhatsApp</button>
+</div>
+</div>
+</div>
+
+<!-- Detergent -->
+<div class="col-lg-4 col-md-6">
+<div class="product bg-detergent">
+<img src="Matic Liquid Detergent.png">
+<div class="p-body">
+<h5>Liquid Detergent – 5 Litre</h5>
+<p>Suitable for machine and hand wash. Deep clean and fabric care.</p>
+<b>₹425</b><br>
+<button class="order-btn mt-2" onclick="order('Detergent 5L',425)">Order on WhatsApp</button>
+</div>
+</div>
+</div>
+
+<!-- Toilet Cleaner -->
+<div class="col-lg-4 col-md-6">
+<div class="product bg-toilet">
+<img src="Toilet Cleaner.png">
+<div class="p-body">
+<h5>Toilet Cleaner – 5 Litre</h5>
+<p>Removes tough stains, kills germs and leaves sparkling freshness.</p>
+<b>₹450</b><br>
+<button class="order-btn mt-2" onclick="order('Toilet Cleaner 5L',450)">Order on WhatsApp</button>
+</div>
+</div>
+</div>
+
+<!-- Handwash -->
+<div class="col-lg-4 col-md-6">
+<div class="product bg-handwash">
+<img src="Hand Wash Peach.png">
+<div class="p-body">
+<h5>Handwash Peach – 5 Litre</h5>
+<p>Gentle on skin with rich foam and refreshing peach fragrance.</p>
+<b>₹549</b><br>
+<button class="order-btn mt-2" onclick="order('Handwash 5L',549)">Order on WhatsApp</button>
+</div>
+</div>
+</div>
+
+<!-- 1 L products -->
+
+<div class="col-lg-4 col-md-6">
+<div class="product bg-detergent">
+<img src="Matic Liquid Detergent.png">
+<div class="p-body">
+<h5>Detergent Liquid – 1 Litre</h5>
+<p>Compact pack for daily washing needs.</p>
+<b>₹90</b><br>
+<button class="order-btn mt-2" onclick="order('Detergent 1L',90)">Order</button>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6">
+<div class="product bg-dish">
+<img src="Dish Wash Gel Lemon.png">
+<div class="p-body">
+<h5>Dishwash 1L + 1L (2 Litres)</h5>
+<p>Double pack lemon dishwash gel for kitchens.</p>
+<b>₹140</b><br>
+<button class="order-btn mt-2" onclick="order('Dishwash 2L Combo',140)">Order</button>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6">
+<div class="product bg-floor">
+<img src="Floor Cleaner Rose.png">
+<div class="p-body">
+<h5>Floor Cleaner Rose – 1 Litre</h5>
+<p>Floral fragrance floor cleaner for daily mopping.</p>
+<b>₹85</b><br>
+<button class="order-btn mt-2" onclick="order('Floor Cleaner Rose 1L',85)">Order</button>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6">
+<div class="product bg-toilet">
+<img src="Toilet Cleaner.png">
+<div class="p-body">
+<h5>Toilet Cleaner – 1 Litre</h5>
+<p>Strong toilet cleaning formula in compact size.</p>
+<b>₹99</b><br>
+<button class="order-btn mt-2" onclick="order('Toilet Cleaner 1L',99)">Order</button>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6">
+<div class="product bg-handwash">
+<img src="Hand Wash Peach.png">
+<div class="p-body">
+<h5>Handwash – 1 Litre</h5>
+<p>Soft on hands, suitable for frequent use.</p>
+<b>₹120</b><br>
+<button class="order-btn mt-2" onclick="order('Handwash 1L',120)">Order</button>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6">
+<div class="product bg-comfort">
+<img src="Comfort.jpg">
+<div class="p-body">
+<h5>Comfort Fabric Conditioner – 1 Litre</h5>
+<p>Long-lasting fragrance and softness for your clothes.</p>
+<b>₹130</b><br>
+<button class="order-btn mt-2" onclick="order('Comfort 1L',130)">Order</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="container text-center">
+<h2>Contact & Orders</h2>
+<p>
+For bulk orders, dealership and enquiries – contact us directly on WhatsApp.
+</p>
+<a href="https://wa.me/919150984507" class="order-btn">Chat on WhatsApp</a>
+</div>
+</section>
+
+<footer>
+<div class="container text-center">
+<p>© 2025 LeLave Cleaning Brand</p>
+</div>
+</footer>
+
+<a class="float-whatsapp" href="https://wa.me/919150984507">🟢</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- service worker -->
+<script>
+if('serviceWorker' in navigator){
+ navigator.serviceWorker.register('sw.js');
+}
+</script>
+
+</body>
+</html>
