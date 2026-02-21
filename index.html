@@ -123,8 +123,37 @@ footer{
 <script>
 const phone="919150984507"; // replace with your WhatsApp number
 function order(name,price){
-  const msg = `Hello LeLave, I would like to order ${name} – Rs.${price}`;
-  window.open(`https://wa.me/${phone}?text=`+encodeURIComponent(msg));
+
+  const cname   = document.getElementById("custName")?.value || "";
+  const cphone  = document.getElementById("custPhone")?.value || "";
+  const address = document.getElementById("custAddress")?.value || "";
+  const qty     = document.getElementById("custQty")?.value || "1";
+
+  if(!cname || !address){
+    alert("Please enter your name and delivery address before ordering.");
+    return;
+  }
+
+  const total = price * qty;
+
+  const msg =
+`Hello LeLave,
+
+Order Details
+-------------------
+Product  : ${name}
+Price    : Rs.${price}
+Quantity : ${qty}
+Total    : Rs.${total}
+
+Customer Name : ${cname}
+Mobile        : ${cphone}
+Delivery Address :
+${address}`;
+
+  window.open(`https://wa.me/${phone}?text=` + encodeURIComponent(msg));
+}
+
 }
 </script>
 
@@ -337,6 +366,52 @@ to suit every need.
 </div>
 </div>
 
+</div>
+</div>
+</section>
+
+<section class="section" id="address">
+<div class="container">
+<h2 class="text-center mb-4">Customer Address for Delivery</h2>
+
+<div class="row justify-content-center">
+<div class="col-md-6">
+
+<div class="card p-4 shadow">
+
+<div class="mb-3">
+<label class="form-label">Customer Name</label>
+<input type="text" id="custName" class="form-control" placeholder="Enter your name">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Mobile Number</label>
+<input type="text" id="custPhone" class="form-control" placeholder="Enter your mobile number">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Full Delivery Address</label>
+<textarea id="custAddress" class="form-control" rows="4"
+placeholder="House No, Street, Area, City, Pincode"></textarea>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Quantity</label>
+<select id="custQty" class="form-select">
+  <option value="1">1 Can / Pack</option>
+  <option value="2">2 Cans / Packs</option>
+  <option value="3">3 Cans / Packs</option>
+  <option value="4">4 Cans / Packs</option>
+  <option value="5">5 Cans / Packs</option>
+</select>
+</div>
+
+<p class="text-muted small">
+Your address will be sent directly to our WhatsApp for order processing.
+</p>
+
+</div>
+</div>
 </div>
 </div>
 </section>
